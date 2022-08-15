@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 
 
 
-ans=set()
+ans=[]
 
 interval=['5m','15m','1h','1d','1wk','1mo']
 
@@ -125,11 +125,12 @@ for ticker_symbol in sectors[sector]:
   current_close = hist['Close'][-1]
   for i in support_resistance.keys():
     if ticker.info['regularMarketPrice']>=i*0.97 and ticker.info['regularMarketPrice']<=i*1.03 and todays_volume > previous_averaged_volume:
-      ans.add(ticker_symbol)
-      
+      ans.append(ticker_symbol)
+
+    
 if len(ans)!=0:
     for i in ans:
-        st.info(i[:-3])
+        st.info(i)
 else:
     st.warning("NO STOCKS ARE AT SUPOORT OR RESISTANCE LEVEL IN "+sector)
 
