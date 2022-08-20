@@ -163,7 +163,8 @@ st.title("SWING ANALYSIS 2")
 
 
 
-stocks=['3MINDIA'
+stocks=['^NSEI'
+,'3MINDIA'
 ,'ABB'
 ,'ACC'
 ,'AIAENG'
