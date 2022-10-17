@@ -127,12 +127,12 @@ for ticker_symbol in sectors[sector]:
 
 
   hist = ticker.history(period="5d")
-  previous_averaged_volume = hist['Volume'].iloc[1:4:1].mean()
-  todays_volume = hist['Volume'][-1]
+  #previous_averaged_volume = hist['Volume'].iloc[1:4:1].mean()
+  #todays_volume = hist['Volume'][-1]
   previous_close = hist['Close'][-2]
   current_close = hist['Close'][-1]
   for i in support_resistance.keys():
-    if ticker.info['regularMarketPrice']>=i*0.97 and ticker.info['regularMarketPrice']<=i*1.03 and todays_volume > previous_averaged_volume:
+    if ticker.info['regularMarketPrice']>=i*0.97 and ticker.info['regularMarketPrice']<=i*1.03 :
       ans.append(ticker_symbol)
 
     
