@@ -794,7 +794,7 @@ revenue = ticker.financials.loc['Total Revenue']
 
 fig, ax = plt.subplots()
 
-ax.bar(x=list(revenue.index.astype('string')), y=revenue.values/10000000)
+ax.bar(list(revenue.index.astype('string')),revenue.values/10000000)
 ax.ylabel("Total Revenues In CR")
 ax.xlabel(ticker_symbol)
 st.pyplot(fig)
