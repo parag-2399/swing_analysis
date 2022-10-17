@@ -52,8 +52,8 @@ if selected_interval in ('5m','15m','1h'):
     
     start_date2=st.date_input("START_DATE",value=d,disabled=True)
 else:
-    d= datetime.today() - timedelta(days=365,value=d)
-    start_date2=st.date_input("START_DATE")
+    d= datetime.today() - timedelta(days=365)
+    start_date2=st.date_input("START_DATE",value=d)
 end_date2=st.date_input("END_DATE")
 
 for ticker_symbol in sectors[sector]:
