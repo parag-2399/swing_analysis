@@ -790,12 +790,12 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 
-revenue = ticker.financials.loc['Total Revenue']
+revenue = ticker.financials.loc['Net Income']
 
 fig, ax = plt.subplots()
 
 ax.bar(list(revenue.index.astype('string')),revenue.values/10000000)
-ax.set_ylabel("Total Revenues In CR")
+ax.set_ylabel("NET PROFIT In CR")
 ax.set_xlabel(ticker_symbol)
 st.pyplot(fig)
 ################################################################################################################################################################################
