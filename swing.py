@@ -52,7 +52,7 @@ if selected_interval in ('5m','15m','1h'):
     
     start_date2=st.date_input("START_DATE",value=d,disabled=True)
 else:
-    d= datetime.today() - timedelta(days=365)
+    d= datetime.today() - timedelta(days=200)
     start_date2=st.date_input("START_DATE",value=d)
 end_date2=st.date_input("END_DATE")
 
@@ -138,7 +138,7 @@ for ticker_symbol in sectors[sector]:
 
     
 if len(ans)!=0:
-    for i in ans:
+    for i in set(ans):
         st.info(i)
 else:
     st.warning("NO STOCKS ARE AT SUPOORT OR RESISTANCE LEVEL IN "+sector)
@@ -686,7 +686,8 @@ if selected_interval in ('5m','15m','1h'):
     
     start_date2=st.date_input("START DATE",value=d,disabled=True)
 else:
-    start_date2=st.date_input("START DATE")
+    d= datetime.today() - timedelta(days=200)
+    start_date2=st.date_input("START DATE",value=d)
 end_date2=st.date_input("END DATE")
 
 
